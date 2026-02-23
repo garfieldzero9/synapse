@@ -1,0 +1,404 @@
+/* Dashboard Specific Styles */
+body.dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.sidebar {
+    width: 260px;
+    background: rgba(10, 10, 10, 0.6);
+    border-right: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.nav-menu {
+    flex: 1;
+    /* This will push everything after it to the bottom */
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--accent-1);
+    margin-bottom: 3rem;
+    text-decoration: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: var(--glass-bg);
+    color: var(--text-main);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+}
+
+.dashboard-glow {
+    position: fixed;
+    width: 40vw;
+    height: 40vw;
+    background: rgba(79, 70, 229, 0.03);
+    /* match organic subtle fill */
+    top: 10%;
+    right: -10vw;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Capture Section (Frictionless Input) */
+.capture-container {
+    max-width: 800px;
+    margin: 4rem auto 2rem;
+    width: 100%;
+    padding: 0 2rem;
+    z-index: 1;
+}
+
+.capture-box {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(16px);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.capture-box:focus-within {
+    border-color: rgba(110, 86, 207, 0.5);
+    box-shadow: 0 0 25px rgba(79, 70, 229, 0.15);
+}
+
+textarea.brain-dump {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1.25rem;
+    resize: none;
+    min-height: 120px;
+    outline: none;
+}
+
+textarea.brain-dump::placeholder {
+    color: #555;
+}
+
+.capture-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1rem;
+}
+
+.btn-magic {
+    background: var(--accent-1);
+    color: white;
+    border: none;
+    border-radius: 99px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-magic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-magic:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Feed Section */
+.feed-container {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    width: 100%;
+    padding: 0 2rem;
+    z-index: 1;
+}
+
+.feed-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.card {
+    background: rgba(20, 20, 20, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.5s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.card-tag.twitter {
+    color: #1DA1F2;
+    background: rgba(29, 161, 242, 0.1);
+}
+
+.card-tag.linkedin {
+    color: #0A66C2;
+    background: rgba(10, 102, 194, 0.1);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-content {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.copy-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Loading Animation */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    display: none;
+}
+
+.is-loading .loading-spinner {
+    display: inline-block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Dashboard Responsiveness */
+@media (max-width: 768px) {
+    body.dashboard {
+        flex-direction: column;
+    }
+
+    /* Move sidebar to bottom like a tab bar */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+        flex-direction: row;
+        border-right: none;
+        border-top: 1px solid var(--glass-border);
+        order: 2;
+        /* visually push it to the bottom */
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+        background: rgba(10, 10, 10, 0.9);
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .brand {
+        display: none;
+        /* Hide logo on mobile tab bar */
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        gap: 4px;
+        padding: 0.5rem;
+        font-size: 0.7rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .nav-item svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Hide User Profile info on mobile to save space */
+    .user-profile {
+        display: none;
+    }
+
+    #signOutBtn {
+        display: none;
+        /* Might want to move this into Settings modal instead */
+    }
+
+    /* Main Content Adjustments */
+    .main-content {
+        order: 1;
+        height: calc(100vh - 65px);
+        /* Subtract tab bar height */
+        padding-bottom: 2rem;
+    }
+
+    .capture-container,
+    .feed-container {
+        padding: 0 1rem;
+        margin-top: 2rem;
+    }
+
+    .capture-box {
+        padding: 1rem;
+    }
+
+    textarea.brain-dump {
+        font-size: 1.1rem;
+        min-height: 100px;
+    }
+
+    .capture-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .capture-actions div:first-child {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-magic,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .copy-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.6rem;
+    }
+}

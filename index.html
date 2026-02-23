@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synapse | Frictionless AI Second Brain</title>
+  <meta name="description"
+    content="Turn your messy brain dumps into professional content instantly. Zero friction AI second brain for creators." />
+  <meta name="keywords"
+    content="AI writing, content creation, second brain, twitter thread generator, linkedin post generator" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sitelumina.app/" />
+  <meta property="og:title" content="Synapse | Frictionless AI Second Brain" />
+  <meta property="og:description"
+    content="Turn your messy brain dumps into professional content instantly. Zero friction AI." />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://sitelumina.app/" />
+  <meta property="twitter:title" content="Synapse | Frictionless AI Second Brain" />
+  <meta property="twitter:description"
+    content="Turn your messy brain dumps into professional content instantly. Zero friction AI." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="glow-blob"></div>
+
+  <div class="container">
+    <header>
+      <div class="logo">Synapse.</div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#login" class="nav-link-login" id="navLoginBtn">Log in</a>
+        <a href="#signup" class="btn btn-secondary" style="margin-left: 1rem;" id="navSignupBtn">Sign up</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 class="animate-fade-in">Your thoughts, organized.<br>Zero friction.</h1>
+        <p class="subtitle animate-fade-in delay-1">Synapse is the AI second brain that turns your messy brain dumps
+          into
+          polished content, beautiful notes, and actionable tasks without you lifting a finger.</p>
+
+        <div class="cta-buttons animate-fade-in delay-2">
+          <a href="#start" class="btn btn-primary" id="heroSignupBtn">Start capturing for free</a>
+          <a href="#demo" class="btn btn-secondary" style="margin-left: 1rem;">Watch Demo</a>
+        </div>
+
+        <div class="app-mockup animate-fade-in delay-3" id="demo">
+          <div class="mockup-header">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="input-area" id="demo-input">
+            <span class="placeholder-text">"I just had an idea for a YouTube video about the future of SaaS..."</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="section-padding">
+        <div class="section-header">
+          <h2>How Synapse Works</h2>
+          <p class="subtitle" style="margin-bottom: 3rem;">A beautiful workflow that respects your time and scales your
+            output.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3>Frictionless Capture</h3>
+            <p>No titles, no folders. Just open the app and start typing your raw, unedited thoughts. We handle the
+              rest.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Parallel Generation</h3>
+            <p>One thought becomes an entire content engine. Synapse simultaneously generates Tweets, LinkedIn posts,
+              and blog outlines.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">☁️</div>
+            <h3>Cloud Archive</h3>
+            <p>Every raw brainstorm and generated thread is securely encrypted and saved to your personal Supabase cloud
+              library.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="section-padding">
+        <div class="section-header">
+          <h2>Simple Pricing</h2>
+          <p class="subtitle" style="margin-bottom: 3rem;">Start for free, upgrade when your thoughts overflow.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Free Plan -->
+          <div class="pricing-card">
+            <h3>Hobbyist</h3>
+            <div class="price">Free<span>/forever</span></div>
+            <ul class="pricing-features">
+              <li>15 AI Generations / month</li>
+              <li>Basic Twitter formatting</li>
+              <li>Save local `.txt` drafts</li>
+              <li>Standard community support</li>
+            </ul>
+            <a href="#signup" class="btn btn-secondary pricing-btn">Get Started</a>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="pricing-card pro">
+            <div class="popular-badge">Most Popular</div>
+            <h3>Creator Pro</h3>
+            <div class="price">$12<span>/month</span></div>
+            <ul class="pricing-features">
+              <li>Unlimited AI Generations</li>
+              <li>Multi-platform outputs (LinkedIn, etc)</li>
+              <li>Secure Cloud Library Sync</li>
+              <li>Prioritized edge functions</li>
+            </ul>
+            <a href="https://buy.stripe.com/test_XYZ" class="btn btn-primary pricing-btn">Upgrade Now</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Auth Modal -->
+  <div class="modal-overlay" id="authModal">
+    <div class="auth-modal">
+      <button class="auth-close" id="closeModalBtn">&times;</button>
+      <h2 class="auth-title" id="authTitle">Welcome Back</h2>
+      <p class="auth-subtitle" id="authSubtitle">Log in to your continuous brain dump.</p>
+
+      <form class="auth-form" id="authForm">
+        <div class="input-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" required placeholder="you@example.com">
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="auth-btn" id="submitAuthBtn">Log in</button>
+      </form>
+
+      <div class="auth-msg" id="authMsg"></div>
+
+      <div class="auth-switch">
+        <span id="switchAuthModeText">Don't have an account? <span id="switchAuthBtn">Sign up</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
