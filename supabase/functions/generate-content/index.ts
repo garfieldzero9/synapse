@@ -33,8 +33,8 @@ Deno.serve(async (req) => {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${openRouterKey}`,
-                    'HTTP-Referer': 'https://sitelumina.app/',
-                    'X-Title': 'Lumina SaaS',
+                    'HTTP-Referer': 'https://synapse.garfieldzero9.dev/',
+                    'X-Title': 'Synapse',
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
