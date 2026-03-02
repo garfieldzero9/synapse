@@ -1,0 +1,67 @@
+<!-- Settings View: Account, API Keys, Danger Zone -->
+<div id="settingsSection" style="display: none;">
+    <section class="feed-container" style="margin-top: 4rem;">
+        <div class="feed-header">Settings</div>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Manage your Synapse account.</p>
+
+        <!-- Account Email -->
+        <div
+            style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 2rem;">
+            <div
+                style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 600;">
+                Account Email</div>
+            <div id="settingsEmailView" style="font-size: 1.1rem; color: white;">...</div>
+        </div>
+
+        <!-- API Connections (BYOK) -->
+        <div
+            style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 2rem;">
+            <div class="feed-header" style="font-size: 1.2rem;">API Connections (BYOK)</div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Synapse lets you
+                Bring Your Own Key (BYOK). Your keys are stored securely in your browser's local storage and are
+                never saved to our servers.</p>
+
+            <div style="margin-bottom: 1rem;">
+                <label
+                    style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 600;">OpenRouter/OpenAI
+                    API Key</label>
+                <input type="password" id="settingsApiKey" placeholder="sk-or-v1-..."
+                    style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); color: #fff;">
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label
+                    style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 600;">Preferred
+                    Model</label>
+                <select id="settingsModel"
+                    style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(0,0,0,0.4); border: 1px solid var(--glass-border); color: #fff; appearance: none;">
+                    <option value="anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet (Recommended for writing)</option>
+                    <option value="openai/gpt-4o">GPT-4o (Great all-rounder)</option>
+                    <option value="openai/gpt-4o-mini">GPT-4o Mini (Fast &amp; Cheap)</option>
+                </select>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 15px; margin-top: 1.5rem;">
+                <button id="saveSettingsBtn" class="btn-magic"
+                    style="border-radius: 99px; padding: 0.75rem 1.5rem; justify-content: center; width: auto;">
+                    <span>Save API Settings</span>
+                </button>
+                <span id="settingsSaveStatus"
+                    style="color: var(--accent-2); font-size: 0.95rem; font-weight: 500; opacity: 0; transition: opacity 0.3s;">Saved
+                    Successfully!</span>
+            </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div
+            style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+            <div class="feed-header" style="font-size: 1.2rem; color: #ef4444;">Danger Zone</div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Logging out will
+                clear your session. Your local keys will remain in your browser.</p>
+            <button id="settingsLogoutBtn" class="btn"
+                style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; width: 100%;">
+                Log out completely
+            </button>
+        </div>
+    </section>
+</div>

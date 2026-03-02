@@ -1,5 +1,5 @@
-import { supabase } from './supabaseClient';
-import './auth.css';
+import { supabase } from './lib/supabaseClient.js';
+import './styles/auth.css';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Modal Elements

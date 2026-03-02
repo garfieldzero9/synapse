@@ -1,0 +1,51 @@
+<!-- Home View: Capture + Feed -->
+<div id="homeSection">
+    <!-- Frictionless Capture -->
+    <section class="capture-container">
+        <div class="capture-box">
+            <textarea id="brainDumpInput" class="brain-dump"
+                placeholder="What's on your mind? Just type. We'll organize it."></textarea>
+            <div class="capture-actions">
+                <div style="color: var(--text-muted); font-size: 0.85rem;">
+                    Press <kbd
+                        style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">Cmd</kbd>
+                    +
+                    <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">Enter</kbd>
+                    to generate
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <div style="position: relative;">
+                        <select id="activeVoiceProfile"
+                            style="padding: 0.6rem 2rem 0.6rem 1rem; border-radius: 99px; background: rgba(0,0,0,0.4); border: 1px solid var(--glass-border); color: #fff; appearance: none; outline: none; cursor: pointer; height: 100%;">
+                            <option value="">Default AI Voice</option>
+                        </select>
+                        <svg style="position: absolute; right: 10px; top: 12px; pointer-events: none;" width="16"
+                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <button id="saveDraftBtn" class="btn-secondary"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 0.6rem 1rem; border-radius: 99px; font-weight: 500; color: var(--text-muted); cursor: pointer;">
+                        Save Text
+                    </button>
+                    <button id="generateBtn" class="btn-magic">
+                        <span>✨ Make Magic</span>
+                        <div class="loading-spinner"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generated Results Feed -->
+    <section class="feed-container">
+        <div class="feed-header">Your Processed Thoughts</div>
+        <div id="feedList">
+            <div style="text-align: center; color: var(--text-muted); padding: 3rem 0; font-style: italic;"
+                id="emptyState">
+                Your second brain is empty. Drop some thoughts above.
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,44 @@
+<!-- Voice Lab View: Analyze writing style and save voice profiles -->
+<div id="voiceLabSection" style="display: none;">
+    <section class="capture-container">
+        <div class="feed-header">Voice Lab</div>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Train Synapse to sound exactly like you. Paste
+            3-5 examples of your best-performing content.</p>
+
+        <div class="capture-box" style="margin-bottom: 2rem;">
+            <textarea id="voiceLabInput" class="brain-dump" style="min-height: 150px;"
+                placeholder="Paste past LinkedIn posts, Tweets, or blog paragraphs here..."></textarea>
+            <div class="capture-actions" style="justify-content: flex-end;">
+                <button id="analyzeVoiceBtn" class="btn-magic">
+                    <span>🧠 Analyze Voice</span>
+                    <div class="loading-spinner"></div>
+                </button>
+            </div>
+        </div>
+
+        <div id="voiceProfileResult" style="display: none;">
+            <div class="feed-header" style="font-size: 1.2rem;">Generated System Prompt</div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Edit this algorithmic prompt if you want
+                to add hard rules (e.g., "Never use emojis").</p>
+
+            <textarea id="systemPromptEditor" class="brain-dump"
+                style="min-height: 200px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 8px; padding: 1rem; width: 100%; color: #fff; line-height: 1.6; font-family: monospace;"></textarea>
+
+            <div style="display: flex; gap: 10px; margin-top: 1rem; align-items: center;">
+                <input type="text" id="voiceProfileName" placeholder="Profile Name (e.g., Tech Founder LinkedIn)"
+                    style="flex: 1; padding: 0.8rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
+                <label
+                    style="display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.9rem;">
+                    <input type="checkbox" id="voiceProfileDefault" checked> Set as Default
+                </label>
+                <button id="saveVoiceProfileBtn" class="btn-magic" style="margin-left: auto;">Save Profile</button>
+            </div>
+        </div>
+
+        <div class="feed-header" style="font-size: 1.2rem; margin-top: 3rem;">Your Saved Voices</div>
+        <div id="voiceProfilesList" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+            <div style="text-align: center; color: var(--text-muted); padding: 2rem 0; font-style: italic;"
+                id="voiceProfilesEmptyState">Loading...</div>
+        </div>
+    </section>
+</div>

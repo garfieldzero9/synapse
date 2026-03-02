@@ -1,5 +1,5 @@
-import './style.css'
-import './auth.js'
+import './styles/style.css'
+import './auth-page.js'
 
 // Add some subtle interactivity to the landing page mockup
 document.addEventListener('DOMContentLoaded', () => {
